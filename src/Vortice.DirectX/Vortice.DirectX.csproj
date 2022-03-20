@@ -3,8 +3,7 @@
   <Sdk Name="SharpGenTools.Sdk" Version="$(SharpGenVersion)" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <!--<TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>-->
+    <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
     <RootNamespace>Vortice</RootNamespace>
     <Description>Core DirectX library.</Description>
   </PropertyGroup>
@@ -14,28 +13,12 @@
     <Using Include="SharpGen.Runtime" />
     
     <SharpGenMapping Include="Mappings.xml" />
-    <PackageReference Include="Vortice.Mathematics" Version="$(VorticeMathematicsVersion)" />
     <PackageReference Include="SharpGen.Runtime.COM" Version="$(SharpGenVersion)" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(SignAssembly)' == 'true'">
-    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-      <_Parameter1>Vortice.D3DCompiler, PublicKey=$(VorticePublicKey)</_Parameter1>
-    </AssemblyAttribute>
-
-    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-      <_Parameter1>Vortice.MediaFoundation, PublicKey=$(VorticePublicKey)</_Parameter1>
-    </AssemblyAttribute>
+  <ItemGroup>
+    <ProjectReference Include="..\Vortice.Mathematics\Vortice.Mathematics.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(SignAssembly)' != 'true'">
-    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-      <_Parameter1>Vortice.D3DCompiler</_Parameter1>
-    </AssemblyAttribute>
-
-    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-      <_Parameter1>Vortice.MediaFoundation</_Parameter1>
-    </AssemblyAttribute>
-  </ItemGroup>
 
 </Project>
