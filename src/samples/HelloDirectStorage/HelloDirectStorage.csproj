@@ -8,8 +8,4 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Vortice.DirectStorage\Vortice.DirectStorage.csproj" />
-  </ItemGroup>
-
 </Project>

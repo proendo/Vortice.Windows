@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Vortice.D3DCompiler\Vortice.D3DCompiler.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Assets\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
